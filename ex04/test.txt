@@ -1,0 +1,3 @@
+Hello world, hello everyone!
+This is a test file.
+hello appears multiple times here.

@@ -67,17 +67,14 @@ void Harl::filter( std::string level )
             std::cout << "[ DEBUG ]" << std::endl;
             this->debug();
             std::cout << std::endl;
-            // fall through
         case 1:
             std::cout << "[ INFO ]" << std::endl;
             this->info();
             std::cout << std::endl;
-            // fall through
         case 2:
             std::cout << "[ WARNING ]" << std::endl;
             this->warning();
             std::cout << std::endl;
-            // fall through
         case 3:
             std::cout << "[ ERROR ]" << std::endl;
             this->error();

@@ -1,14 +1,4 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: student <student@42.fr>                    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/11 00:00:00 by student           #+#    #+#             */
-/*   Updated: 2025/12/11 00:00:00 by student          ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
+
 #include <iostream>
 #include <fstream>
 #include <iostream>
@@ -31,7 +21,6 @@ int main (int ac,char **av)
         std::cerr << "Error: s1 cannot be empty." << std::endl;
         return 1;
     }
-    // Open input file for reading
     std::ifstream input_file(filename.c_str());
     if (!input_file.is_open())
     {
@@ -39,7 +28,6 @@ int main (int ac,char **av)
         return 1;
     }
 
-    // Read entire file content into a string
     std::string content;
     std::string line;
     while (std::getline(input_file, line))
@@ -50,7 +38,6 @@ int main (int ac,char **av)
     }
     input_file.close();
 
-    // Manual string replacement (without using std::string::replace)
     std::string result;
     size_t pos = 0;
     size_t found;
@@ -60,13 +47,10 @@ int main (int ac,char **av)
         found = content.find(s1, pos);
         if (found == std::string::npos)
         {
-            // No more occurrences, append the rest
             result += content.substr(pos);
             break;
         }
-        // Append everything before the found position
         result += content.substr(pos, found - pos);
-        // Append s2 instead of s1
         result += s2;
         pos = found + s1.length();
     }

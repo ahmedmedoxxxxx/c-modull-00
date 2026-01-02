@@ -4,6 +4,10 @@ Weapon::Weapon(const std::string& type) : type(type)
 {
 }
 
+Weapon::~Weapon()
+{
+}
+
 const std::string& Weapon::getType() const
 {
     return type;

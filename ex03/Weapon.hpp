@@ -11,6 +11,7 @@ class Weapon
     
     public:
         Weapon(const std::string& type);
+        ~Weapon();
         const std::string& getType() const;
         void setType(const std::string& newType);
 };
@@ -23,6 +24,7 @@ class HumanA
     
     public:
         HumanA(const std::string& name, Weapon& weapon);
+        ~HumanA();
         void attack() const;
 };
 
@@ -34,6 +36,7 @@ class HumanB
     
     public:
         HumanB(const std::string& name);
+        ~HumanB();
         void setWeapon(Weapon& weapon);
         void attack() const;
 };
